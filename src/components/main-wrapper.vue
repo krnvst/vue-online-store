@@ -1,6 +1,6 @@
 <template>
 	<div class="main-wrapper">
-		<p>{{title}}</p>
+		<h1>Online store</h1>
 		<catalog/>
 		<card/>
 	</div>
@@ -15,11 +15,6 @@
 		components: {
 			catalog,
 			card
-		},
-		data() {
-			return {
-				title: "Main"
-			}
 		}
 	}
 </script>
@@ -30,7 +25,8 @@
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
-		max-width: 900px;
+		max-width: 950px;
+		width: 100%;
 		margin: 0 auto;
 	}
 </style>
