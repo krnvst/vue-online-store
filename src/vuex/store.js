@@ -11,19 +11,32 @@ let store = new Vuex.Store({
 		cart: []
 	},
 	mutations: {
-		// Мутируем (изменяем) наш state
+		// Мутируем (изменяем) наш state (синхронно)
 		SET_PRODUCTS_TO_STATE: (state, products) => {
 			state.products = products
 		},
 		SET_CART: (state, product) => {
-			state.cart.push(product)
+			if (state.cart.length) {
+				let isProductExists = false;
+				state.cart.map((item)=> {
+					if (item.article === product.article) {
+						isProductExists = true
+						item.quantity++
+					}
+				})
+				if (!isProductExists) {
+					state.cart.push(product)
+				}
+			} else {
+				state.cart.push(product)
+			}
 		},
 		DELETE_CART: (state, index) => {
 			state.cart.splice(index, 1)
 		}
 	},
 	actions: {
-		// Запускаем мутации (синхронно)
+		// Запускаем мутации (асинхронно)
 		GET_PRODUCTS_FROM_API({commit}) {
 			return axios('http://localhost:3000/products', {
 				method: "GET"
