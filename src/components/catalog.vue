@@ -4,7 +4,7 @@
 			v-for="product in PRODUCTS"
 			:key="product.article"
 			:product_data="product"
-			@sendArticle="showChildArticleInConsole"
+			@addToCart="addToCardParent"
 		/>
 	</div>
 </template>
@@ -29,9 +29,11 @@
 		},
 		methods: {
 			...mapActions([
-				'GET_PRODUCTS_FROM_API'
+				'GET_PRODUCTS_FROM_API',
+				'ADD_TO_CART'
 			]),
-			showChildArticleInConsole(data) {
+			addToCardParent(data) {
+				this.ADD_TO_CART(data)
 				console.log(data)
 			}
 		},

@@ -3,7 +3,7 @@
 		<img class="catalog-item__image" :src="require('../assets/images/' + product_data.image)" alt="">
 		<p>Name: <span>{{ product_data.name }}</span></p>
 		<p>Price: <span>{{ product_data.price }} ₴</span></p>
-		<button @click="sendDataToParent">Add to card</button>
+		<button @click="addToCart">Add to card</button>
 	</div>
 </template>
 
@@ -19,8 +19,8 @@
 			}
 		},
 		methods: {
-			sendDataToParent() {
-				this.$emit('sendArticle', this.product_data)
+			addToCart() {
+				this.$emit('addToCart', this.product_data)
 			}
 		}
 	}
