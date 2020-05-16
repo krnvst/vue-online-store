@@ -20,7 +20,7 @@
 		},
 		methods: {
 			sendDataToParent() {
-				this.$emit('sendArticle', this.product_data.article)
+				this.$emit('sendArticle', this.product_data)
 			}
 		}
 	}
