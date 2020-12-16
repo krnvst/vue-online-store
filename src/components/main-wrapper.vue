@@ -1,33 +1,15 @@
 <template>
 	<div class="main-wrapper">
 		<h1>Online store</h1>
-		<catalog/>
-		<cart
-			v-if="isEmptyCart"
-			:cart_datas="CART"
-		/>
+		<keep-alive>
+			<router-view></router-view>
+		</keep-alive>
 	</div>
 </template>
 
 <script>
-	import catalog from "./catalog"
-	import cart from "./cart"
-	import {mapGetters} from 'vuex'
-
 	export default {
-		name: "main-wrapper",
-		components: {
-			catalog,
-			cart
-		},
-		computed: {
-			...mapGetters([
-				'CART'
-			]),
-			isEmptyCart() {
-				return this.CART.length !== 0
-			}
-		}
+		name: "main-wrapper"
 	}
 </script>
 

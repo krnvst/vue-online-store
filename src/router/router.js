@@ -1,0 +1,26 @@
+import Vue from 'vue'
+import Router from 'vue-router'
+
+// components
+import catalog from "../components/catalog"
+import cart from "../components/cart";
+
+Vue.use(Router)
+
+let router = new Router({
+	routes: [
+		{
+			path: '/',
+			name: 'catalog',
+			component: catalog
+		},
+		{
+			path: '/cart',
+			name: 'cart',
+			component: cart,
+			props: true
+		}
+	]
+})
+
+export default router

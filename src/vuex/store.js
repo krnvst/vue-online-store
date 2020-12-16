@@ -58,7 +58,7 @@ let store = new Vuex.Store({
 		}
 	},
 	getters: {
-		// Получаем значение из state в компонентах (асинхронно)
+		// Получаем значение из state в компонентах
 		PRODUCTS(state) {
 			return state.products
 		},
