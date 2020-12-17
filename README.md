@@ -10,7 +10,7 @@ yarn global add json-server
 ### Compiles and hot-reloads for development
 
 ```shell
-yarn json
+yarn json (Запускать от имени администратора)
 yarn serve
 ```
 
